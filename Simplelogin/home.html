@@ -1,0 +1,27 @@
+<html>
+<head><script>
+validation();
+function validation() {
+if(localStorage.getItem("valid") != "true"){
+logout();
+}
+function logout(){
+
+window.location = "login.html";    
+return false;
+}
+</script></head>
+<title>Home</title>
+    <link rel="stylesheet" type="text/css" href="hstyle.css">
+<link rel="icon" href="avatar.png">
+<h1><u>Home</u></h1>
+
+<input type="button" class = "lgbtn" value="Logout" onclick="logout()" />
+<script>
+function logout(){
+
+window.location = "login.html";    
+return false;
+}
+</script>
+</html>

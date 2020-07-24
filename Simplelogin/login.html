@@ -1,0 +1,66 @@
+<html oncopy="return false" oncut="return false" onpaste="return false" oncontextmenu="return false">
+<head>
+<title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="icon" href="avatar.png">
+<body>
+    <div class="loginbox">
+    <img src="avatar.png" class="avatar">
+        <h1><u>Login</u></h1>
+        <form name="loginform" id="loginform" onsubmit="return login()" method="post">
+            <p>Username <span class = "redcol">*</span></p>
+            <input type="text" name="user" >
+            <p>Password <span class = "redcol">*</span></p>
+            <input type="password" name="pwd">
+            <input type="submit" name="login-button" value="Login">
+            <center><p><span class = "redcol">*</span> Fields with an asterisk are required.</p></center>
+        </form>
+<form name= "homeform" onsubmit="return logout()" method="post"><div id="hform">
+  This is my DIV element.
+</div></form>
+	<script>
+function hform(){
+
+}
+function login() {
+  var user = document.forms["loginform"]["user"].value;
+var pwd = document.forms["loginform"]["pwd"].value;
+  if (user == "abc" && pwd == "123") {
+localStorage.setItem("valid", "true");
+ window.location = "home.html";
+return false;
+  }
+  else{
+localStorage.setItem("valid", "false");
+	alert("Username or Password incorrect, please try again.");
+}
+} 
+function logout(){
+}
+document.onkeydown = function (event)
+{
+     event = (event || window.event);
+     if (event.keyCode == 123 || event.keyCode == 18)
+     {
+           return false;
+     }
+     if (event.ctrlKey && (event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 85 || event.keyCode === 117)) {
+                return false;
+            }
+        
+if(event.ctrlKey && event.shiftKey && event.keyCode==73)
+    {
+        return false;  //Prevent from ctrl+shift+i
+    }
+    if(event.ctrlKey && event.keyCode==73)
+    {
+        return false;  //Prevent from ctrl+shift+i
+    }
+}
+</script>
+        
+    </div>
+
+</body>
+</head>
+</html>
